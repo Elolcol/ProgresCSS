@@ -9,7 +9,7 @@
 
   --primary-color: #ff0000;
   --secondary-color: #00ff00;
-  --border-color: light-dark(#999999, #757575);
+  --border-color: light-dark(#999999, #5a6568);
 
   /*Hover Colors*/
   --primary-hover-color: #850000;
@@ -203,10 +203,47 @@ input[type="reset"],
   cursor: pointer;
 }
 
+/*Progress*/
 progress {
   appearance: none;
   width: 100%;
   border: 0.05rem solid var(--border-color);
+  border-radius: var(--rounded);
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--border-color);
+  border-radius: var(--rounded);
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--primary-color);
+  border-radius: var(--rounded);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--primary-color);
+  border-radius: var(--rounded);
+}
+
+progress::-ms-fill {
+  background-color: var(--primary-color);
+  border-radius: var(--rounded);
+}
+
+/*Meter*/
+meter::-webkit-meter-bar {
+  background-color: var(--border-color);
+  border-radius: var(--rounded);
+}
+
+meter::-webkit-meter-optimum-value {
+  background-color: var(--primary-color);
+  border-radius: var(--rounded);
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background-color: var(--secondary-color);
   border-radius: var(--rounded);
 }
 
@@ -255,8 +292,8 @@ samp {
 
 kbd {
   color: var(--text-color);
-  border: 1px solid var(--gray-color);
-  border-bottom: 3px solid var(--gray-color);
+  background-color: var(--gray-color);
+  border: 1px solid var(--border-color);
   border-radius: var(--rounded);
   padding: 0.2rem 0.4rem;
 }
